@@ -40,6 +40,8 @@ allprojects {
   repositories{
     jcenter()
   }
+
+  buildDir = 'target'
 }
 
 subprojects {
