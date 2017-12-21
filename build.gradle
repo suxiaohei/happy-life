@@ -56,6 +56,7 @@ buildscript {
         classpath "io.spring.gradle:dependency-management-plugin:1.0.5.BUILD-SNAPSHOT"
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
     }
+
 }
 
 allprojects {
@@ -70,7 +71,7 @@ subprojects {
     apply plugin: "idea"
     apply plugin: "application"
 
-    apply plugin: "io.spring.dependency-management"
+//    apply plugin: "io.spring.dependency-management"
     apply plugin: "org.springframework.boot"
 
     sourceCompatibility = 1.8
