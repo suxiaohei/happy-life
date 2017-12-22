@@ -49,7 +49,9 @@ buildscript {
             url "https://repo.spring.io/plugins-snapshot"
         }
 
-        jcenter()
+        mavenLocal()
+
+        mavenCentral()
     }
 
     dependencies {
@@ -71,18 +73,21 @@ subprojects {
     apply plugin: "idea"
     apply plugin: "application"
 
-//    apply plugin: "io.spring.dependency-management"
+    apply plugin: "io.spring.dependency-management"
     apply plugin: "org.springframework.boot"
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
     repositories {
-        jcenter()
+        mavenLocal()
+
+        mavenCentral()
     }
 
     dependencies {
         compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+        compile("org.springframework.boot:spring-boot-devtools:${springBootVersion}")
 
         testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
         testCompile "org.springframework.security:spring-security-test:${springTestVersion}"
