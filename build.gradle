@@ -38,7 +38,7 @@ buildScan { licenseAgreementUrl = "https://gradle.com/terms-of-service"; license
 
 buildscript {
     ext {
-        springBootVersion ="1.5.2.RELEASE"
+        springBootVersion = "1.5.2.RELEASE"
         springTestVersion = "4.2.2.RELEASE"
         junitVersion = "4.12"
     }
@@ -67,7 +67,7 @@ allprojects {
 
     apply plugin: 'checkstyle'
 
-    checkstyle{
+    checkstyle {
 
         // version 7.6.1 requires Java 8
         toolVersion = "7.6.1"
