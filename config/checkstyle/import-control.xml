@@ -1,0 +1,95 @@
+<!DOCTYPE import-control PUBLIC
+  "-//Puppy Crawl//DTD Import Control 1.1//EN"
+  "http://www.puppycrawl.com/dtds/import_control_1_1.dtd">
+<!--
+// Licensed to the Apache Software Foundation (ASF) under one or more
+// contributor license agreements.  See the NOTICE file distributed with
+// this work for additional information regarding copyright ownership.
+// The ASF licenses this file to You under the Apache License, Version 2.0
+// (the "License"); you may not use this file except in compliance with
+// the License.  You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+-->
+
+<import-control pkg="com.sl.happylife">
+
+  <!-- THINK HARD ABOUT THE LAYERING OF THE PROJECT BEFORE CHANGING THIS FILE -->
+
+  <!-- common library dependencies -->
+  <allow pkg="java"/>
+  <!--<allow pkg="javax.management"/>-->
+  <!--<allow pkg="org.slf4j"/>-->
+  <!--<allow pkg="org.junit"/>-->
+  <!--<allow pkg="org.hamcrest"/>-->
+  <!--<allow pkg="org.easymock"/>-->
+  <!--<allow pkg="org.powermock"/>-->
+  <!--<allow pkg="java.security"/>-->
+  <!--<allow pkg="javax.net.ssl"/>-->
+  <!--<allow pkg="javax.security"/>-->
+  <!--<allow pkg="javax"/>-->
+  <!--<allow pkg="org"/>-->
+  <!--<allow pkg="com"/>-->
+  <!--<allow pkg="io"/>-->
+
+  <allow pkg="com.alibaba.fastjson"/>
+  <allow pkg="com.google.common.collect"/>
+  <allow pkg="com.zaxxer.hikari"/>
+  <allow pkg="io.netty.bootstrap"/>
+  <allow pkg="io.netty.buffer"/>
+  <allow pkg="io.netty.channel"/>
+  <allow pkg="io.netty.handler"/>
+  <allow pkg="io.netty.util"/>
+  <allow pkg="java.util"/>
+  <allow pkg="javax.annotation"/>
+  <allow pkg="javax.servlet"/>
+  <allow pkg="javax.sql"/>
+  <allow pkg="org.apache.commons.lang3"/>
+  <allow pkg="org.apache.ibatis.annotations"/>
+  <allow pkg="org.apache.ibatis.jdbc"/>
+  <allow pkg="org.apache.ibatis.session"/>
+  <allow pkg="org.apache.ibatis.type"/>
+  <allow pkg="org.assertj.core.util.Lists"/>
+  <allow pkg="org.junit"/>
+  <allow pkg="org.mockito"/>
+  <allow pkg="org.mybatis.spring"/>
+  <allow pkg="org.quartz"/>
+  <allow pkg="org.slf4j"/>
+  <allow pkg="org.springframework.beans.factory.annotation"/>
+  <allow pkg="org.springframework.beans.factory.config"/>
+  <allow pkg="org.springframework.boot"/>
+  <allow pkg="org.springframework.context"/>
+  <allow pkg="org.springframework.core"/>
+  <allow pkg="org.springframework.http"/>
+  <allow pkg="org.springframework.jdbc"/>
+  <allow pkg="org.springframework.scheduling"/>
+  <allow pkg="org.springframework.security.config"/>
+  <allow pkg="org.springframework.security.web"/>
+  <allow pkg="org.springframework.stereotype"/>
+  <allow pkg="org.springframework.test"/>
+  <allow pkg="org.springframework.transaction"/>
+  <allow pkg="org.springframework.util"/>
+  <allow pkg="org.springframework.web.bind.annotation"/>
+  <allow pkg="org.springframework.web.client"/>
+  <allow pkg="org.springframework.web.servlet"/>
+  <allow pkg="org.springframework.web.filter"/>
+  <allow pkg="org.springframework.web.util"/>
+  <allow pkg="org.springframework.web.multipart"/>
+  <allow pkg="org.springframework.amqp.core"/>
+  <allow pkg="org.springframework.amqp.rabbit"/>
+  <allow pkg="org.springframework.amqp.support"/>
+  <allow pkg="org.springframework.messaging.handler.annotation"/>
+  <allow pkg="org.aspectj.lang"/>
+  <allow pkg="com.yiyi"/>
+  <allow pkg="ch.qos.logback"/>
+  <allow pkg="kafka"/>
+  <allow pkg="com.aliyun.oss"/>
+  <allow pkg="com.google.zxing"/>
+  <allow pkg="org.apache.poi"/>
+</import-control>

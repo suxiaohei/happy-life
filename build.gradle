@@ -37,7 +37,6 @@ dependencies {
 buildScan { licenseAgreementUrl = "https://gradle.com/terms-of-service"; licenseAgree = "yes" }*/
 
 buildscript {
-
     ext {
         springBootVersion ="1.5.2.RELEASE"
         springTestVersion = "4.2.2.RELEASE"
@@ -58,7 +57,6 @@ buildscript {
         classpath "io.spring.gradle:dependency-management-plugin:1.0.5.BUILD-SNAPSHOT"
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
     }
-
 }
 
 allprojects {
@@ -70,15 +68,17 @@ allprojects {
     apply plugin: 'checkstyle'
 
     checkstyle{
-        configFile = new File(rootDir, "config/checkstyle/google_checks.xml")
-        /*configProperties = [importControlFile: "$rootDir/checkstyle/import-control.xml"]*/
+
         // version 7.6.1 requires Java 8
-        /*toolVersion = '7.6.1'*/
+        toolVersion = "7.6.1"
+
+        configFile = new File(rootDir, "config/checkstyle/google_checks.xml")
+        configProperties = [importControlFile: "$rootDir/config/checkstyle/import-control.xml"]
     }
+
 }
 
 subprojects {
-
     apply plugin: "java"
     apply plugin: "application"
 
