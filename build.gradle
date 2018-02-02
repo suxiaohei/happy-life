@@ -38,7 +38,8 @@ buildScan { licenseAgreementUrl = "https://gradle.com/terms-of-service"; license
 
 buildscript {
     ext {
-        springBootVersion = "1.5.2.RELEASE"
+        springBootVersion = "1.5.9.RELEASE"
+        springCloudVersion = "1.4.2.RELEASE"
         springTestVersion = "4.2.2.RELEASE"
         junitVersion = "4.12"
     }
@@ -83,7 +84,7 @@ subprojects {
     apply plugin: "application"
 
     apply plugin: "io.spring.dependency-management"
-    apply plugin: "org.springframework.boot"
+    apply plugin: 'spring-boot'
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
@@ -97,6 +98,8 @@ subprojects {
     dependencies {
         compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
         compile "org.springframework.boot:spring-boot-devtools:${springBootVersion}"
+        compile "org.springframework.cloud:spring-cloud-starter-config:${springCloudVersion}"
+        compile "org.springframework.cloud:spring-cloud-starter-eureka:${springCloudVersion}"
 
         testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
         testCompile "org.springframework.security:spring-security-test:${springTestVersion}"
