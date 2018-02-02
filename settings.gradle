@@ -18,4 +18,4 @@ include 'services:webservice'
 rootProject.name = 'happy-life'
 
 include 'greeter_app'
-include 'greeter_clould_app'
+include 'greeter_cloud_app'
