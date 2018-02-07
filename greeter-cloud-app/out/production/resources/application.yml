@@ -1,0 +1,12 @@
+server:
+  port: 8870
+spring:
+  application:
+    name: greeter_cloud_app
+eureka:
+  instance:
+      hostname: localhost
+      port: 8081
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
