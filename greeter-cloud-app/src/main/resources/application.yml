@@ -2,7 +2,7 @@ server:
   port: 8870
 spring:
   application:
-    name: greeter_cloud_app
+    name: greeter-cloud-app
 eureka:
   instance:
       hostname: localhost

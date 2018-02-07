@@ -8,7 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @author suxin
  */
 @SpringBootApplication
-@EnableDiscoveryClient(autoRegister = false)
+@EnableDiscoveryClient
 public class GreeterCloudApplication {
 
     public static void main(String[] args) {
