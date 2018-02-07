@@ -19,4 +19,5 @@ rootProject.name = 'happy-life'
 
 include 'greeter-app'
 include 'greeter-cloud-app'
-include 'greeter-eureka'
+include 'greeter-eureka-server'
+include 'greeter-feign'

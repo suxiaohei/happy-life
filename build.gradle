@@ -102,6 +102,7 @@ subprojects {
         compile "org.springframework.cloud:spring-cloud-starter-config:${springCloudVersion}"
         compile "org.springframework.cloud:spring-cloud-starter-eureka:${springCloudVersion}"
         compile "org.springframework.cloud:spring-cloud-starter-eureka-server:${springCloudVersion}"
+        compile "org.springframework.cloud:spring-cloud-starter-feign:${springCloudVersion}"
 
         testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
         testCompile "org.springframework.security:spring-security-test:${springTestVersion}"
