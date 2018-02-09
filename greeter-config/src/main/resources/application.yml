@@ -1,9 +1,13 @@
+server:
+  port: 8888
 spring:
   application:
-    name: greeter-cloud-app
+    name: greeter-config
   cloud:
     config:
-      uri: http://localhost:8888/
+      server:
+        git:
+          uri: https://github.com/spring-cloud-samples/config-repo
 eureka:
   instance:
       hostname: localhost

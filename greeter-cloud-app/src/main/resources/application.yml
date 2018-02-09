@@ -1,6 +1,9 @@
 spring:
   application:
     name: greeter-cloud-app
+  cloud:
+    config:
+      uri: http://localhost:8888/
 eureka:
   instance:
       hostname: localhost
