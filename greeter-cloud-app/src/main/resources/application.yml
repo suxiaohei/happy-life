@@ -3,6 +3,8 @@ spring:
     name: greeter-cloud-app
   cloud:
     config:
+      profile: dev
+      label: master
       uri: http://localhost:8888/
 eureka:
   instance:

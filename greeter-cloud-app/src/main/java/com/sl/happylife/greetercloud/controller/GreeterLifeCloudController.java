@@ -24,7 +24,8 @@ public class GreeterLifeCloudController {
     @GetMapping(path = "/hi")
     public String sayHi(@RequestParam String name) {
 
-        return "hi " + name + " from port " + greeterCloudConfigures.getPort();
+        return /*greeterCloudConfigures.getName() + */"say hi " + name +
+                " from port " + greeterCloudConfigures.getPort();
     }
 
     @Autowired

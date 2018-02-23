@@ -5,9 +5,11 @@ spring:
     name: greeter-config
   cloud:
     config:
+      label: master
       server:
+        default-application-name: greeter-config
         git:
-          uri: https://github.com/spring-cloud-samples/config-repo
+          uri: https://github.com/suxiaohei/config-repo.git
 eureka:
   instance:
       hostname: localhost
