@@ -1,4 +1,4 @@
-package com.sl.happylify.greeterfeign.service;
+package com.sl.happylife.greeterfeign.service;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.sl.happylify.greeterfeign;
+package com.sl.happylife.greeterfeign;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
