@@ -40,4 +40,14 @@ buildScan { licenseAgreementUrl = "https://gradle.com/terms-of-service"; license
 dependencies {
     compile "org.quartz-scheduler:quartz:2.2.1"
     compile "mysql:mysql-connector-java:5.1.40"
+
+    // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
+    compile group: 'com.zaxxer', name: 'HikariCP', version: '2.7.8'
+    // https://mvnrepository.com/artifact/org.springframework/spring-tx
+    compile group: 'org.springframework', name: 'spring-tx', version: '4.3.13.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+    compile group: 'org.springframework', name: 'spring-jdbc', version: '4.3.13.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework/spring-context-support
+    compile group: 'org.springframework', name: 'spring-context-support', version: '4.3.13.RELEASE'
+
 }

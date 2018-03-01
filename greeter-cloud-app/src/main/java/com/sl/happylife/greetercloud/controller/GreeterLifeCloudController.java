@@ -1,9 +1,8 @@
 package com.sl.happylife.greetercloud.controller;
 
 import com.sl.happylife.greetercloud.configures.GreeterCloudConfigures;
+import com.sl.happylife.greetercloud.service.SayHiScheduleFacade;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GreeterLifeCloudController {
 
     private GreeterCloudConfigures greeterCloudConfigures;
+    private SayHiScheduleFacade sayHiScheduleFacade;
 
     @GetMapping(path = "/greeter_life_test")
     public String testLife() {
@@ -24,8 +24,12 @@ public class GreeterLifeCloudController {
     @GetMapping(path = "/hi")
     public String sayHi(@RequestParam String name) {
 
-        return /*greeterCloudConfigures.getName() + */"say hi " + name +
-                " from port " + greeterCloudConfigures.getPort();
+        return sayHiScheduleFacade.sayHi(name);
+    }
+
+    @Autowired
+    public void setSayHiScheduleFacade(SayHiScheduleFacade sayHiScheduleFacade) {
+        this.sayHiScheduleFacade = sayHiScheduleFacade;
     }
 
     @Autowired
