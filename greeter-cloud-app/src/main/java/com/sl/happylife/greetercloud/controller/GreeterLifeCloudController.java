@@ -1,5 +1,6 @@
 package com.sl.happylife.greetercloud.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.sl.happylife.greetercloud.configures.GreeterCloudConfigures;
 import com.sl.happylife.greetercloud.service.SayHiScheduleFacade;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,10 @@ public class GreeterLifeCloudController {
     @GetMapping(path = "/hi")
     public String sayHi(@RequestParam String name) {
 
-        return sayHiScheduleFacade.sayHi(name);
+        JSONObject params = new JSONObject()
+                .fluentPut("name", name);
+
+        return sayHiScheduleFacade.sayHi(params);
     }
 
     @Autowired

@@ -19,10 +19,11 @@ public class SayHiScheduleFacadeImpl implements SayHiScheduleFacade {
     private QuartzFacade quartzFacade;
 
     @Override
-    public String sayHi(String name) {
+    public String sayHi(JSONObject params) {
 
         Long currentTime = System.currentTimeMillis();
         String quartzIdentity = UUID.randomUUID().toString();
+        String name = params.getString("name");
 
         quartzFacade.scheduleOnTime(
                 currentTime + 3000, quartzIdentity,
