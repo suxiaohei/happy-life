@@ -1,11 +1,6 @@
 package com.sl.happylife.greeterschedule.configures;
 
 import com.sl.happylife.greeterschedule.spring.AutowiringSpringBeanJobFactory;
-
-import java.io.IOException;
-import java.util.Properties;
-import javax.sql.DataSource;
-
 import com.zaxxer.hikari.HikariDataSource;
 import org.quartz.spi.JobFactory;
 import org.slf4j.Logger;
@@ -13,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.PropertiesFactoryBean;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.ApplicationContext;
@@ -21,12 +15,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
+
+import javax.sql.DataSource;
+import java.io.IOException;
+import java.util.Properties;
 
 @Configuration
 @PropertySource("classpath:quartz.properties")
-//@Profile({EnvMode.STAGING, EnvMode.PRODUCTION})
+//@Profile({"prod"})
 public class SchedulerConfiguration {
 
     @Value("${bzn_quartz.org.quartz.scheduler.instanceName}")

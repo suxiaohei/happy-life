@@ -1,7 +1,6 @@
 //package com.sl.happylife.greeterschedule.configures;
 //
-//import com.yiyi.ifollow.config.configuration.EnvMode;
-//import com.yiyi.ifollow.quartz.spring.AutowiringSpringBeanJobFactory;
+//import com.sl.happylife.greeterschedule.spring.AutowiringSpringBeanJobFactory;
 //import org.quartz.Scheduler;
 //import org.quartz.impl.DirectSchedulerFactory;
 //import org.quartz.spi.JobFactory;
@@ -16,7 +15,7 @@
 //
 //@Configuration
 //@PropertySource("classpath:plan_quartz.properties")
-//@Profile({EnvMode.DEVELOP})
+//@Profile({"dev"})
 //public class SchedulerConfigurationDev {
 //
 //    @Value("${plan_quartz.org.quartz.threadPool.threadCount}")
