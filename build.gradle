@@ -99,7 +99,6 @@ subprojects {
         compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
         compile "org.springframework.boot:spring-boot-devtools:${springBootVersion}"
 
-        compile "org.springframework.cloud:spring-cloud-starter-config:${springCloudVersion}"
         compile "org.springframework.cloud:spring-cloud-starter-eureka:${springCloudVersion}"
         compile "org.springframework.cloud:spring-cloud-starter-eureka-server:${springCloudVersion}"
         compile "org.springframework.cloud:spring-cloud-starter-feign:${springCloudVersion}"

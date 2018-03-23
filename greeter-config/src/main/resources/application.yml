@@ -5,11 +5,13 @@ spring:
     name: greeter-config
   cloud:
     config:
-      label: master
+      #enabled: true
+      #label: master
       server:
-        default-application-name: greeter-config
+        #default-application-name: greeter-config
         git:
-          uri: https://github.com/suxiaohei/config-repo.git
+          uri: https://github.com/suxiaohei/config-repo
+          search-paths: greeter-cloud-*
 eureka:
   instance:
       hostname: localhost

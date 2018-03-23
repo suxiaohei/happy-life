@@ -12,7 +12,7 @@ public class GreeterCloudConfigures {
 
 //    @Value("${name}")
 //    private String name;
-
+//
 //    public String getName() {
 //        return name;
 //    }
