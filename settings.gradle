@@ -17,4 +17,9 @@ include 'services:webservice'
 
 rootProject.name = 'happy-life'
 
-include 'greeter'
+include 'greeter-app'
+include 'greeter-cloud-app'
+include 'greeter-config'
+include 'greeter-eureka-server'
+include 'greeter-feign'
+include 'greeter-schedule'
