@@ -5,7 +5,8 @@ spring:
     name: greeter-config
   cloud:
     config:
-      #enabled: true
+      name: greeter-config
+      enabled: true
       #label: master
       server:
         #default-application-name: greeter-config

@@ -10,12 +10,12 @@ public class GreeterCloudConfigures {
     @Value("${server.port}")
     private Integer port;
 
-//    @Value("${name}")
-//    private String name;
-//
-//    public String getName() {
-//        return name;
-//    }
+    @Value("${name}")
+    private String name;
+
+    public String getName() {
+        return name;
+    }
 
     public Integer getPort() {
         return port;

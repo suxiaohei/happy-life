@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: greeter-cloud-app
+  cloud:
+    config:
+       uri: http://localhost:8888/
+       # enabled: true
+       # name: greeter-cloud-app
+       # override-none: true
+       # label: master
