@@ -130,4 +130,6 @@ _site
 .jekyll-metadata
 
 ### app
-logs/
+logs
+out
+target
