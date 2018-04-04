@@ -1,5 +1,0 @@
-mainClassName = 'com.sl.happylife.greeter.GreeterApplication'
-
-dependencies {
-    compile project(':greeter-schedule')
-}

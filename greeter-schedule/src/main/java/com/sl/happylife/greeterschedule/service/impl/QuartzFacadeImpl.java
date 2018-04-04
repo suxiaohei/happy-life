@@ -1,31 +1,20 @@
 package com.sl.happylife.greeterschedule.service.impl;
 
-import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
-
 import com.alibaba.fastjson.JSONObject;
 import com.sl.happylife.greeterschedule.job.QuartzCronJob;
 import com.sl.happylife.greeterschedule.job.QuartzOnTimeJob;
 import com.sl.happylife.greeterschedule.service.QuartzFacade;
-
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
-
-import org.quartz.CronScheduleBuilder;
-import org.quartz.JobBuilder;
-import org.quartz.JobDataMap;
-import org.quartz.JobDetail;
-import org.quartz.Scheduler;
-import org.quartz.SchedulerException;
-import org.quartz.Trigger;
-import org.quartz.TriggerBuilder;
-import org.quartz.TriggerKey;
+import org.quartz.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
+
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Primary
 @Service
