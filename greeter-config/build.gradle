@@ -1,0 +1,4 @@
+mainClassName = 'com.sl.happylife.greeterconfig.GreeterConfigApplication'
+dependencies {
+    compile "org.springframework.cloud:spring-cloud-config-server:${springCloudVersion}"
+}

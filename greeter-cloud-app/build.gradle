@@ -1,5 +1,6 @@
 mainClassName = 'com.sl.happylife.greetercloud.GreeterCloudApplication'
 
 dependencies {
+    compile "org.springframework.cloud:spring-cloud-config-client:${springCloudVersion}"
     compile project(':greeter-schedule')
 }

@@ -26,7 +26,7 @@ public class GreeterLifeCloudController {
     public String sayHi(@RequestParam String name) {
 
         JSONObject params = new JSONObject()
-                .fluentPut("name", name);
+                .fluentPut("name", greeterCloudConfigures.getName());
 
         return sayHiScheduleFacade.sayHi(params);
     }
