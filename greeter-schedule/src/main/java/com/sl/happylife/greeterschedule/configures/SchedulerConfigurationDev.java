@@ -10,11 +10,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @PropertySource("classpath:quartz.properties")
-//@Profile({"dev"})
+@Profile({"dev"})
 public class SchedulerConfigurationDev {
 
     @Value("${quartz.org.quartz.threadPool.threadCount}")
