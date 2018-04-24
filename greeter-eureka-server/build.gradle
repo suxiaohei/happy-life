@@ -1,1 +1,5 @@
 mainClassName = 'com.sl.happylife.greetereurekaserver.GreeterEurekaServerApplication'
+
+dependencies {
+    compile "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:${springCloudVersion}"
+}

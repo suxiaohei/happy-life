@@ -102,8 +102,7 @@ subprojects {
         compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
         compile "org.springframework.boot:spring-boot-devtools:${springBootVersion}"
 
-        compile "org.springframework.cloud:spring-cloud-starter-eureka:${springCloudVersion}"
-        compile "org.springframework.cloud:spring-cloud-starter-eureka-server:${springCloudVersion}"
+        compile "org.springframework.cloud:spring-cloud-starter-netflix-eureka:${springCloudVersion}"
         compile "org.springframework.cloud:spring-cloud-starter-feign:${springCloudVersion}"
 
         compile "org.springframework.cloud:spring-cloud-starter-config:${springCloudVersion}"
@@ -112,7 +111,6 @@ subprojects {
         compile group: 'com.alibaba', name: 'fastjson', version: '1.2.46'
 
         testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
-        testCompile "org.springframework.security:spring-security-test:${springTestVersion}"
         testCompile "junit:junit:${junitVersion}"
     }
 }

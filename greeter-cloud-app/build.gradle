@@ -2,5 +2,15 @@ mainClassName = 'com.sl.happylife.greetercloud.GreeterCloudApplication'
 
 dependencies {
     compile "org.springframework.cloud:spring-cloud-config-client:${springCloudVersion}"
+
+    compile "org.springframework.security:spring-security-config:${springTestVersion}"
+    compile "org.springframework.security:spring-security-web:${springTestVersion}"
+
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.thymeleaf.extras:thymeleaf-extras-springsecurity4'
+
     compile project(':greeter-schedule')
+
+    testCompile "org.springframework.security:spring-security-test:${springTestVersion}"
 }
