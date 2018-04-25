@@ -3,8 +3,12 @@ mainClassName = 'com.sl.happylife.greetercloud.GreeterCloudApplication'
 dependencies {
     compile "org.springframework.cloud:spring-cloud-config-client:${springCloudVersion}"
 
-    compile "org.springframework.security:spring-security-config:${springTestVersion}"
-    compile "org.springframework.security:spring-security-web:${springTestVersion}"
+    compile "org.springframework.boot:spring-boot-starter-websocket:${springBootVersion}"
+
+    compile "org.springframework.security:spring-security-config:${springVersion}"
+    compile "org.springframework.security:spring-security-web:${springVersion}"
+
+
 
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
     compile 'org.springframework.boot:spring-boot-starter-web'
@@ -12,5 +16,5 @@ dependencies {
 
     compile project(':greeter-schedule')
 
-    testCompile "org.springframework.security:spring-security-test:${springTestVersion}"
+    testCompile "org.springframework.security:spring-security-test:${springVersion}"
 }

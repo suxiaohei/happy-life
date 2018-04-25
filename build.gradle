@@ -40,7 +40,7 @@ buildscript {
     ext {
         springBootVersion = "1.5.9.RELEASE"
         springCloudVersion = "1.4.1.RELEASE"
-        springTestVersion = "4.2.2.RELEASE"
+        springVersion = "4.2.2.RELEASE"
         junitVersion = "4.12"
     }
 

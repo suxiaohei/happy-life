@@ -23,32 +23,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author Joe Grandja
  */
 @Controller
-public class MainController {
+public class GreeterSecurityController {
 
-    @RequestMapping("/")
+    @RequestMapping("/security")
     public String root() {
-        return "redirect:/index";
+        return "redirect:/security/index";
     }
 
-    @RequestMapping("/index")
-    public String index() {
-        return "index";
-    }
-
-    @RequestMapping("/user/index")
+    @RequestMapping("/security/user/index")
     public String userIndex() {
-        return "user/index";
+        return "/security/user/index";
     }
 
-    @RequestMapping("/login")
+    @RequestMapping("/security/login")
     public String login() {
-        return "login";
+        return "/security/login";
     }
 
-    @RequestMapping("/login-error")
+    @RequestMapping("/security/login-error")
     public String loginError(Model model) {
         model.addAttribute("loginError", true);
-        return "login";
+        return "/security/login";
     }
 
 }
