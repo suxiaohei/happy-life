@@ -4,14 +4,12 @@ dependencies {
     compile "org.springframework.cloud:spring-cloud-config-client:${springCloudVersion}"
 
     compile "org.springframework.boot:spring-boot-starter-websocket:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
 
     compile "org.springframework.security:spring-security-config:${springVersion}"
     compile "org.springframework.security:spring-security-web:${springVersion}"
 
-
-
-    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.thymeleaf.extras:thymeleaf-extras-springsecurity4'
 
     compile project(':greeter-schedule')
