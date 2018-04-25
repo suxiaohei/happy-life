@@ -16,5 +16,17 @@ public class WebSocketController {
         Thread.sleep(1000); // simulated delay
         return new Greeting("Hello, " + HtmlUtils.htmlEscape(message.getName()) + "!");
     }
+//
+//    @MessageMapping("/hello")
+//    public Greeting hello(HelloMessage message) {
+//
+//        return new Greeting("Hello, " + HtmlUtils.htmlEscape(message.getName()) + "!");
+//    }
+//
+//    @SendTo("/topic/greetings")
+//    public Greeting toMessage() {
+//
+//        return new Greeting("Hello !");
+//    }
 
 }
