@@ -12,8 +12,8 @@ public class WebSocketFacadeImpl implements WebSocketFacade {
     private WebSocketBiz webSocketBiz;
 
     @Override
-    public void sendMessage(String identifies, String message) {
+    public boolean sendMessage(String identifies, String message) {
 
-        webSocketBiz.sendMessageToUser(identifies, message);
+        return webSocketBiz.sendMessageToUser(identifies, message);
     }
 }

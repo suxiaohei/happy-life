@@ -11,5 +11,5 @@ public interface WebSocketFacade {
      * @param identifies 唯一标示
      * @param message    消息体
      */
-    void sendMessage(String identifies, String message);
+    boolean sendMessage(String identifies, String message);
 }

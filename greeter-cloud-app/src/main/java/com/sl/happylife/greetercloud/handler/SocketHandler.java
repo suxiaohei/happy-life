@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.sl.happylife.greetercloud.biz.WebSocketBiz;
 import com.sl.happylife.greetercloud.enums.SocketMsgCode;
 import com.sl.happylife.greetercloud.service.WebSocketFacade;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
@@ -17,6 +19,8 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
  */
 public class SocketHandler extends TextWebSocketHandler {
 
+    private Logger logger = LoggerFactory.getLogger(SocketHandler.class);
+
     @Autowired
     private WebSocketBiz webSocketBiz;
 
@@ -25,21 +29,23 @@ public class SocketHandler extends TextWebSocketHandler {
 
     @Override
     public void afterConnectionEstablished(WebSocketSession webSocketSession) {
-        System.out.println("成功建立连接");
-
         //获取唯一标示
         String identifies = this.getClientId(webSocketSession);
+        logger.info("identifies is {}", identifies);
 
         //注册
         webSocketBiz.register(identifies, webSocketSession);
 
-        webSocketFacade.sendMessage(identifies, "测试发送");
+        //发送成功结果
+        webSocketFacade.sendMessage(identifies, "成功建立连接");
     }
 
     @Override
     public void handleTextMessage(WebSocketSession webSocketSession, TextMessage textMessage) {
 
         String payLoad = textMessage.getPayload();
+        logger.info("接受的消息 {} ", payLoad);
+
         JSONObject msgJson = JSONObject.parseObject(payLoad);
         if (ObjectUtils.isEmpty(msgJson)) {
             System.out.println("msgJson 为null");
@@ -50,7 +56,7 @@ public class SocketHandler extends TextWebSocketHandler {
         SocketMsgCode socketMsgCode = SocketMsgCode.getSocketMsgCodeByMsgCode(
                 msgJson.getInteger("msg_code"));
         if (ObjectUtils.isEmpty(socketMsgCode)) {
-            System.out.println("msg_code 不识别");
+            logger.error("msg_code 不识别", socketMsgCode);
             return;
         }
 
@@ -69,9 +75,10 @@ public class SocketHandler extends TextWebSocketHandler {
         if (webSocketSession.isOpen()) {
             webSocketSession.close();
         }
-        System.out.println("连接出错");
 
         String identifies = this.getClientId(webSocketSession);
+        logger.error(" {} 连接出错", identifies);
+
         if (!StringUtils.isEmpty(identifies)) {
             webSocketBiz.remove(identifies);
         }
@@ -79,7 +86,7 @@ public class SocketHandler extends TextWebSocketHandler {
 
     @Override
     public void afterConnectionClosed(WebSocketSession webSocketSession, CloseStatus status) {
-        System.out.println("连接已关闭：" + status);
+        logger.info("连接已关闭, status is {}", status);
 
         String identifies = this.getClientId(webSocketSession);
         if (!StringUtils.isEmpty(identifies)) {

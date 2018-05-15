@@ -12,10 +12,10 @@
 
     var websocket = null;
     if ('WebSocket' in window) {
-        websocket = new WebSocket("ws://localhost:8871/socketHandler?identifies="+floor);
+        websocket = new WebSocket("ws://localhost:8871/socketHandler?identifies=" + floor);
     }
     else if ('MozWebSocket' in window) {
-        websocket = new MozWebSocket("ws://localhost:8871/socketHandler?identifies="+floor);
+        websocket = new MozWebSocket("ws://localhost:8871/socketHandler?identifies=" + floor);
     }
 
     websocket.onopen = onOpen;
@@ -26,7 +26,7 @@
     function onOpen(openEvt) {
         //发送注册信息
         var msgPObj = {
-            msg_code: "1",
+            msg_code: "0",
             payload: {
                 data: ""
             }
@@ -35,8 +35,11 @@
         websocket.send(JSON.stringify(msgPObj));
     }
 
+    /**
+     *  接受消息
+     */
     function onMessage(evt) {
-        alert(evt.data);
+        console.log(evt.data);
     }
 
     function onError() {
@@ -45,11 +48,21 @@
     function onClose() {
     }
 
+    /**
+     * 发送
+     */
     function doSend() {
         if (websocket.readyState == websocket.OPEN) {
             var msg = document.getElementById("inputMsg").value;
-            websocket.send(msg);//调用后台handleTextMessage方法
-            alert("发送成功!");
+            //发送注册信息
+            var msgPObj = {
+                msg_code: "0",
+                payload: {
+                    data: msg
+                }
+            };
+            //调用后台handleTextMessage方法
+            websocket.send(JSON.stringify(msgPObj));
         } else {
             alert("连接失败!");
         }
