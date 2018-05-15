@@ -1,12 +1,14 @@
 package com.sl.happylife.greetercloud.configures;
 
 import com.sl.happylife.greetercloud.handler.SocketHandler;
+import com.sl.happylife.greetercloud.interceptor.WebSocketInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
+import org.springframework.web.socket.server.HandshakeInterceptor;
 
 /**
  * @author suxin
@@ -17,7 +19,9 @@ public class SimpleWebSocketConfig implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(socketHandler(), "/socketHandler");
+
+        registry.addHandler(this.socketHandler(), "/socketHandler")
+                .addInterceptors(this.getWebSocketInterceptor());
     }
 
     @Bean
@@ -25,5 +29,10 @@ public class SimpleWebSocketConfig implements WebSocketConfigurer {
         return new SocketHandler();
     }
 
+
+    @Bean
+    public HandshakeInterceptor getWebSocketInterceptor() {
+        return new WebSocketInterceptor();
+    }
 
 }

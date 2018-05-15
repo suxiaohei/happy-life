@@ -1,21 +1,19 @@
 package com.sl.happylife.greetercloud.service.impl;
 
-import com.sl.happylife.greetercloud.handler.SocketHandler;
+import com.sl.happylife.greetercloud.biz.WebSocketBiz;
 import com.sl.happylife.greetercloud.service.WebSocketFacade;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class WebSocketFacadeImpl implements WebSocketFacade {
 
     @Autowired
-    private SocketHandler socketHandler;
+    private WebSocketBiz webSocketBiz;
 
     @Override
-    public void register(String uniquelyIdentifies) {
+    public void sendMessage(String identifies, String message) {
 
-    }
-
-    @Override
-    public void sendMessage(String uniquelyIdentifies, String message) {
-
+        webSocketBiz.sendMessageToUser(identifies, message);
     }
 }

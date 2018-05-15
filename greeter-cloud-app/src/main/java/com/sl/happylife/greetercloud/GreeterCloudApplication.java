@@ -16,6 +16,7 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableDiscoveryClient
 @ComponentScan({
         "com.sl.happylife.**.controller",
+        "com.sl.happylife.**.biz",
         "com.sl.happylife.**.service",
         "com.sl.happylife.**.configures"})
 public class GreeterCloudApplication {

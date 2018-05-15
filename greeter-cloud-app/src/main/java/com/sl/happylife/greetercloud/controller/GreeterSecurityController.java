@@ -18,12 +18,19 @@ package com.sl.happylife.greetercloud.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author Joe Grandja
  */
 @Controller
 public class GreeterSecurityController {
+
+    @RequestMapping(path = "/security/index", method = RequestMethod.GET)
+    public String toSecurityPage() {
+
+        return "/security/index";
+    }
 
     @RequestMapping("/security")
     public String root() {

@@ -1,100 +1,89 @@
 package com.sl.happylife.greetercloud.handler;
 
+import com.alibaba.fastjson.JSONObject;
+import com.sl.happylife.greetercloud.biz.WebSocketBiz;
+import com.sl.happylife.greetercloud.enums.SocketMsgCode;
+import com.sl.happylife.greetercloud.service.WebSocketFacade;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
-import org.springframework.web.socket.WebSocketMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
-
-import java.io.IOException;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author suxin
  */
 public class SocketHandler extends TextWebSocketHandler {
 
-    /**
-     * 在线用户列表
-     */
-    private static final ConcurrentHashMap<String, WebSocketSession> USER_MAP;
+    @Autowired
+    private WebSocketBiz webSocketBiz;
 
-    /**
-     * 用户标识
-     */
-    private static final String CLIENT_ID = "uniquelyIdentifies";
-
-    static {
-        USER_MAP = new ConcurrentHashMap<>();
-    }
+    @Autowired
+    private WebSocketFacade webSocketFacade;
 
     @Override
-    public void afterConnectionEstablished(WebSocketSession session) throws Exception {
+    public void afterConnectionEstablished(WebSocketSession webSocketSession) {
         System.out.println("成功建立连接");
-        String uniquelyIdentifies = getClientId(session);
-        if (uniquelyIdentifies != null) {
-            USER_MAP.put(uniquelyIdentifies, session);
-            session.sendMessage(new TextMessage("成功建立socket连接"));
-        }
+
+        //获取唯一标示
+        String identifies = this.getClientId(webSocketSession);
+
+        //注册
+        webSocketBiz.register(identifies, webSocketSession);
+
+        webSocketFacade.sendMessage(identifies, "测试发送");
     }
 
     @Override
-    public void handleTextMessage(WebSocketSession session, TextMessage message) {
+    public void handleTextMessage(WebSocketSession webSocketSession, TextMessage textMessage) {
 
-        WebSocketMessage sendMsg = new TextMessage("server:" + message);
-        try {
-            session.sendMessage(sendMsg);
-        } catch (IOException e) {
-            e.printStackTrace();
+        String payLoad = textMessage.getPayload();
+        JSONObject msgJson = JSONObject.parseObject(payLoad);
+        if (ObjectUtils.isEmpty(msgJson)) {
+            System.out.println("msgJson 为null");
+            return;
+        }
+
+        //获取消息
+        SocketMsgCode socketMsgCode = SocketMsgCode.getSocketMsgCodeByMsgCode(
+                msgJson.getInteger("msg_code"));
+        if (ObjectUtils.isEmpty(socketMsgCode)) {
+            System.out.println("msg_code 不识别");
+            return;
+        }
+
+        switch (socketMsgCode) {
+            case INIT:
+                break;
+            case OTHER:
+                break;
+            default:
         }
     }
 
-    /**
-     * 发送信息给指定用户
-     *
-     * @param clientId 用户id
-     * @param message  消息体
-     * @return 发送状态
-     */
-    public boolean sendMessageToUser(String clientId, String message) {
-        if (USER_MAP.get(clientId) == null) {
-            return false;
-        }
-        WebSocketSession session = USER_MAP.get(clientId);
-        System.out.println("sendMessage:" + session);
-        if (!session.isOpen()) {
-            return false;
-        }
-        try {
-            session.sendMessage(new TextMessage(message));
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-        return true;
-    }
 
     @Override
-    public void handleTransportError(WebSocketSession session, Throwable exception) throws Exception {
-        if (session.isOpen()) {
-            session.close();
+    public void handleTransportError(WebSocketSession webSocketSession, Throwable exception) throws Exception {
+        if (webSocketSession.isOpen()) {
+            webSocketSession.close();
         }
         System.out.println("连接出错");
 
-        String uniquelyIdentifies = this.getClientId(session);
-        if (!StringUtils.isEmpty(uniquelyIdentifies)) {
-            USER_MAP.remove(uniquelyIdentifies);
+        String identifies = this.getClientId(webSocketSession);
+        if (!StringUtils.isEmpty(identifies)) {
+            webSocketBiz.remove(identifies);
         }
     }
 
     @Override
-    public void afterConnectionClosed(WebSocketSession session, CloseStatus status) {
+    public void afterConnectionClosed(WebSocketSession webSocketSession, CloseStatus status) {
         System.out.println("连接已关闭：" + status);
 
-        String uniquelyIdentifies = this.getClientId(session);
-        if (!StringUtils.isEmpty(uniquelyIdentifies)) {
-            USER_MAP.remove(uniquelyIdentifies);
+        String identifies = this.getClientId(webSocketSession);
+        if (!StringUtils.isEmpty(identifies)) {
+            webSocketBiz.remove(identifies);
         }
     }
 
@@ -111,7 +100,7 @@ public class SocketHandler extends TextWebSocketHandler {
      */
     private String getClientId(WebSocketSession session) {
         try {
-            return (String) session.getAttributes().get(CLIENT_ID);
+            return (String) session.getAttributes().get(WebSocketBiz.CLIENT_ID);
         } catch (Exception e) {
             return null;
         }
