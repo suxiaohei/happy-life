@@ -12,7 +12,8 @@ import org.springframework.context.annotation.ComponentScan;
         DataSourceAutoConfiguration.class,
         HibernateJpaAutoConfiguration.class})
 @EnableDiscoveryClient
-@EnableFeignClients
+@EnableFeignClients(basePackages = {
+        "com.sl.happylife.greetercloud.facade.**.service"})
 @ComponentScan({
         "com.sl.happylife.**.controller",
         "com.sl.happylife.**.service"})

@@ -1,12 +1,17 @@
 package com.sl.happylife.greeterfeign.controller;
 
-import com.sl.happylife.greeterfeign.service.WordFeignClientFacade;
+import com.sl.happylife.greetercloud.facade.service.WordFeignClientFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 消费类
+ *
+ * @author suxin
+ */
 @RestController
 public class GreeterFeignController {
 

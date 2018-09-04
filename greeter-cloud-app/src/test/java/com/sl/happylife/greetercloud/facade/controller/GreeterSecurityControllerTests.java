@@ -1,4 +1,4 @@
-package com.sl.happylife.greetercloud.controller;
+package com.sl.happylife.greetercloud.facade.controller;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,7 +1,6 @@
 dependencies {
-    compile "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:${springCloudVersion}"
-
-    compile "org.springframework.cloud:spring-cloud-starter-feign:${springCloudVersion}"
-
     compile "org.springframework.cloud:spring-cloud-starter-config:${springCloudVersion}"
+
+    // 本地项目依赖
+    compile project(':greeter-cloud-app-api')
 }

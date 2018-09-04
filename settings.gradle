@@ -18,6 +18,7 @@ include 'services:webservice'
 rootProject.name = 'happy-life'
 
 include 'greeter-cloud-app'
+include 'greeter-cloud-app-api'
 include 'greeter-config'
 include 'greeter-eureka-server'
 include 'greeter-feign'
