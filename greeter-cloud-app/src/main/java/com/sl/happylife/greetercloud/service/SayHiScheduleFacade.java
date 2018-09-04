@@ -3,6 +3,8 @@ package com.sl.happylife.greetercloud.service;
 import com.alibaba.fastjson.JSONObject;
 
 /**
+ * SayHi 接口
+ *
  * @author suxin
  */
 public interface SayHiScheduleFacade {

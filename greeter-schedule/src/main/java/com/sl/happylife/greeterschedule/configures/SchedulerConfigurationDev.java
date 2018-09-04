@@ -13,6 +13,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 
+/**
+ * 测试环境Quartz初始化
+ *
+ * @author suxin
+ */
 @Configuration
 @PropertySource("classpath:quartz.properties")
 @Profile({"dev"})

@@ -1,6 +1,8 @@
 package com.sl.happylife.greetercloud.facade.service;
 
 /**
+ * webSocket 接口
+ *
  * @author suxin
  */
 public interface WebSocketFacade {

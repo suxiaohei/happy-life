@@ -12,7 +12,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.util.ObjectUtils;
 
 /**
- * Created by suxin on 17-6-5.
+ * 定时任务语法执行类
+ *
+ *@author suxin
  */
 public class QuartzCronJob implements Job {
 

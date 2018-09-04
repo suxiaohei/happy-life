@@ -3,6 +3,11 @@ package com.sl.happylife.greeterfeign.enums;
 import java.util.Arrays;
 import java.util.Optional;
 
+/**
+ * 消息类型枚举
+ *
+ * @author suxin
+ */
 public enum SocketMsgCode {
 
     //注册

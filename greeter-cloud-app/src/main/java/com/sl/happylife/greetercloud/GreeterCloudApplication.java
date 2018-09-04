@@ -8,6 +8,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
+ * Spring Cloud Eureka 提供服务模块
+ *
  * @author suxin
  */
 @SpringBootApplication(exclude = {

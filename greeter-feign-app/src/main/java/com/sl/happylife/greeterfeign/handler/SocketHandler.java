@@ -15,6 +15,8 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 /**
+ * webSocket 处理类
+ *
  * @author suxin
  */
 public class SocketHandler extends TextWebSocketHandler {

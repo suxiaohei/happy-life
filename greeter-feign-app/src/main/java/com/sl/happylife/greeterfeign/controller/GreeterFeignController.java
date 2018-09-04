@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 消费类
+ * Spring Cloud Feign 对外消费接口
  *
  * @author suxin
  */

@@ -1,7 +1,6 @@
 package com.sl.happylife.greetercloud.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.sl.happylife.greetercloud.configures.GreeterCloudConfigures;
 import com.sl.happylife.greetercloud.service.SayHiScheduleFacade;
 import com.sl.happylife.greeterschedule.service.QuartzFacade;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +10,8 @@ import java.util.Calendar;
 import java.util.UUID;
 
 /**
+ * sayHi接口实现类
+ *
  * @author suxin
  */
 @Service

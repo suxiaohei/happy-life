@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * 配置文件（从Spring Cloud Config中读取）
+ *
  * @author suxin
  */
 @Configuration

@@ -3,6 +3,8 @@ package com.sl.happylife.greeterschedule.service;
 import com.alibaba.fastjson.JSONObject;
 
 /**
+ * 定时任务接口
+ *
  * @author suxin
  */
 public interface QuartzFacade {

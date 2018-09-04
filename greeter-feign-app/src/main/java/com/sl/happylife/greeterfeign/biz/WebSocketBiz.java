@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
+ * webSocket 内部逻辑实现类
+ *
  * @author suxin
  */
 @Component

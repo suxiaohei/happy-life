@@ -12,6 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.util.ObjectUtils;
 
+/**
+ * 定时任务具体时点执行类
+ *
+ * @author suxin
+ */
 public class QuartzOnTimeJob implements Job {
 
     private ApplicationContext context;

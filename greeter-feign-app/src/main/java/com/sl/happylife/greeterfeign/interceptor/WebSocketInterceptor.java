@@ -18,10 +18,11 @@ import static com.sl.happylife.greeterfeign.biz.WebSocketBiz.CLIENT_ID;
  */
 public class WebSocketInterceptor implements HandshakeInterceptor {
 
-
     @Override
-    public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler handler,
-                                   Map<String, Object> map) throws Exception {
+    public boolean beforeHandshake(
+            ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler handler,
+            Map<String, Object> map) throws Exception {
+
         if (request instanceof ServletServerHttpRequest) {
             ServletServerHttpRequest serverHttpRequest = (ServletServerHttpRequest) request;
 //            Map parameterMap = serverHttpRequest.getServletRequest().getParameterMap();
@@ -29,14 +30,14 @@ public class WebSocketInterceptor implements HandshakeInterceptor {
             if (!StringUtils.isEmpty(identifies)) {
                 map.put(CLIENT_ID, identifies);
             }
-
         }
         return true;
     }
 
     @Override
-    public void afterHandshake(ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse,
-                               WebSocketHandler webSocketHandler, Exception e) {
+    public void afterHandshake(
+            ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse,
+            WebSocketHandler webSocketHandler, Exception e) {
 
     }
 }

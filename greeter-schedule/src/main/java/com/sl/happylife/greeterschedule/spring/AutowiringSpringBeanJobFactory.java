@@ -6,8 +6,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.scheduling.quartz.SpringBeanJobFactory;
 
+/**
+ * 自动注解工厂
+ *
+ * @author suxin
+ */
 public final class AutowiringSpringBeanJobFactory extends SpringBeanJobFactory implements
-    ApplicationContextAware {
+        ApplicationContextAware {
 
     private transient AutowireCapableBeanFactory beanFactory;
 

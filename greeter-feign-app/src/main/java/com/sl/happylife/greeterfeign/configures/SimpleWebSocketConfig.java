@@ -11,6 +11,8 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 import org.springframework.web.socket.server.HandshakeInterceptor;
 
 /**
+ * 消息提供配置
+ *
  * @author suxin
  */
 @Configuration

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
+ * webSocket 对外接口实现类
+ *
  * @author suxin
  */
 @Service

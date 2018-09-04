@@ -8,7 +8,6 @@ import org.quartz.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
@@ -17,6 +16,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * 定时任务接口实现类
+ *
  * @author suxin
  */
 @Service

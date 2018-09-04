@@ -1,5 +1,10 @@
 package com.sl.happylife.greeterfeign.domain.dto;
 
+/**
+ * Hello 逻辑业务类
+ *
+ * @author suxin
+ */
 public class HelloMessage {
 
     private String name;

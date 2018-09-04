@@ -22,6 +22,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
+ * 生产环境Quartz初始化
+ *
  * @author suxin
  */
 @Configuration
