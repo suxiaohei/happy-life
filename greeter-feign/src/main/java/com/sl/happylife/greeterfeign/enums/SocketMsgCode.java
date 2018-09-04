@@ -1,4 +1,4 @@
-package com.sl.happylife.greetercloud.enums;
+package com.sl.happylife.greeterfeign.enums;
 
 import java.util.Arrays;
 import java.util.Optional;

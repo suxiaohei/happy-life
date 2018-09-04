@@ -1,4 +1,4 @@
-package com.sl.happylife.greetercloud.domain.dto;
+package com.sl.happylife.greeterfeign.domain.dto;
 
 public class HelloMessage {
 

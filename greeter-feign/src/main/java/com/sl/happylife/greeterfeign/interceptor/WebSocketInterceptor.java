@@ -1,4 +1,4 @@
-package com.sl.happylife.greetercloud.interceptor;
+package com.sl.happylife.greeterfeign.interceptor;
 
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
@@ -9,7 +9,7 @@ import org.springframework.web.socket.server.HandshakeInterceptor;
 
 import java.util.Map;
 
-import static com.sl.happylife.greetercloud.biz.WebSocketBiz.CLIENT_ID;
+import static com.sl.happylife.greeterfeign.biz.WebSocketBiz.CLIENT_ID;
 
 /**
  * webSocket 拦截器

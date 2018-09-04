@@ -1,4 +1,4 @@
-package com.sl.happylife.greetercloud.service;
+package com.sl.happylife.greetercloud.facade.service;
 
 /**
  * @author suxin
@@ -10,6 +10,7 @@ public interface WebSocketFacade {
      *
      * @param identifies 唯一标示
      * @param message    消息体
+     * @return 结果
      */
     boolean sendMessage(String identifies, String message);
 }

@@ -1,19 +1,26 @@
-package com.sl.happylife.greetercloud.service.impl;
+package com.sl.happylife.greeterfeign.service.impl;
 
-import com.sl.happylife.greetercloud.biz.WebSocketBiz;
-import com.sl.happylife.greetercloud.service.WebSocketFacade;
+import com.sl.happylife.greetercloud.facade.service.WebSocketFacade;
+import com.sl.happylife.greeterfeign.biz.WebSocketBiz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author suxin
+ */
 @Service
 public class WebSocketFacadeImpl implements WebSocketFacade {
 
-    @Autowired
     private WebSocketBiz webSocketBiz;
 
     @Override
     public boolean sendMessage(String identifies, String message) {
 
         return webSocketBiz.sendMessageToUser(identifies, message);
+    }
+
+    @Autowired
+    public void setWebSocketBiz(WebSocketBiz webSocketBiz) {
+        this.webSocketBiz = webSocketBiz;
     }
 }

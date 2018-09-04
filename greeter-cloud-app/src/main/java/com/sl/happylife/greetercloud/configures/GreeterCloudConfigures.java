@@ -2,8 +2,10 @@ package com.sl.happylife.greetercloud.configures;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
+/**
+ * @author suxin
+ */
 @Configuration
 public class GreeterCloudConfigures {
 

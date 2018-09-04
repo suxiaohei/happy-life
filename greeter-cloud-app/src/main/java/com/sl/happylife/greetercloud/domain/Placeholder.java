@@ -1,1 +1,0 @@
-package com.sl.happylife.greetercloud.domain;

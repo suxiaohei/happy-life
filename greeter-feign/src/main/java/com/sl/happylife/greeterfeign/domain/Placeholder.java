@@ -1,0 +1,1 @@
+package com.sl.happylife.greeterfeign.domain;

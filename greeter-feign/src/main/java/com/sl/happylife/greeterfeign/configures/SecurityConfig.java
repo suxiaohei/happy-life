@@ -1,4 +1,4 @@
-package com.sl.happylife.greetercloud.configures;
+package com.sl.happylife.greeterfeign.configures;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

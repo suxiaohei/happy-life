@@ -1,9 +1,9 @@
-package com.sl.happylife.greetercloud.handler;
+package com.sl.happylife.greeterfeign.handler;
 
 import com.alibaba.fastjson.JSONObject;
-import com.sl.happylife.greetercloud.biz.WebSocketBiz;
-import com.sl.happylife.greetercloud.enums.SocketMsgCode;
-import com.sl.happylife.greetercloud.service.WebSocketFacade;
+import com.sl.happylife.greetercloud.facade.service.WebSocketFacade;
+import com.sl.happylife.greeterfeign.biz.WebSocketBiz;
+import com.sl.happylife.greeterfeign.enums.SocketMsgCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +21,7 @@ public class SocketHandler extends TextWebSocketHandler {
 
     private Logger logger = LoggerFactory.getLogger(SocketHandler.class);
 
-    @Autowired
     private WebSocketBiz webSocketBiz;
-
-    @Autowired
     private WebSocketFacade webSocketFacade;
 
     @Override
@@ -111,5 +108,15 @@ public class SocketHandler extends TextWebSocketHandler {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    @Autowired
+    public void setWebSocketBiz(WebSocketBiz webSocketBiz) {
+        this.webSocketBiz = webSocketBiz;
+    }
+
+    @Autowired
+    public void setWebSocketFacade(WebSocketFacade webSocketFacade) {
+        this.webSocketFacade = webSocketFacade;
     }
 }

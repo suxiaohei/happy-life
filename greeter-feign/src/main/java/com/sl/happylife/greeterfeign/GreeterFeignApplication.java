@@ -16,7 +16,9 @@ import org.springframework.context.annotation.ComponentScan;
         "com.sl.happylife.greetercloud.facade.**.service"})
 @ComponentScan({
         "com.sl.happylife.**.controller",
-        "com.sl.happylife.**.service"})
+        "com.sl.happylife.**.biz",
+        "com.sl.happylife.**.configures",
+        "com.sl.happylife.**.service.impl"})
 public class GreeterFeignApplication {
 
     public static void main(String[] args) {

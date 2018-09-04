@@ -11,7 +11,7 @@ import java.util.Calendar;
 import java.util.UUID;
 
 /**
- *
+ * @author suxin
  */
 @Service
 public class SayHiScheduleFacadeImpl implements SayHiScheduleFacade {

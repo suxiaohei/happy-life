@@ -16,7 +16,9 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-@Primary
+/**
+ * @author suxin
+ */
 @Service
 public class QuartzFacadeImpl implements QuartzFacade {
 
@@ -25,7 +27,10 @@ public class QuartzFacadeImpl implements QuartzFacade {
     private Scheduler scheduler;
 
     @Override
-    public boolean scheduleOnTime(long startTime, String quartzIdentity, Class beanClass, String methodName, JSONObject paramJson) {
+    public boolean scheduleOnTime(
+            long startTime, String quartzIdentity, Class beanClass, String methodName,
+            JSONObject paramJson) {
+
         if (paramJson == null) {
             return false;
         }
@@ -63,8 +68,10 @@ public class QuartzFacadeImpl implements QuartzFacade {
     }
 
     @Override
-    public boolean scheduleCron(String quartzIdentity, String cronExpress, Class beanClass, String methodName, JSONObject paramJson,
-                                boolean isReplace) {
+    public boolean scheduleCron(
+            String quartzIdentity, String cronExpress, Class beanClass, String methodName,
+            JSONObject paramJson, boolean isReplace) {
+
         if (paramJson == null) {
             return false;
         }

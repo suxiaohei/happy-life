@@ -1,7 +1,7 @@
-package com.sl.happylife.greetercloud.configures;
+package com.sl.happylife.greeterfeign.configures;
 
-import com.sl.happylife.greetercloud.handler.SocketHandler;
-import com.sl.happylife.greetercloud.interceptor.WebSocketInterceptor;
+import com.sl.happylife.greeterfeign.handler.SocketHandler;
+import com.sl.happylife.greeterfeign.interceptor.WebSocketInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.WebSocketHandler;

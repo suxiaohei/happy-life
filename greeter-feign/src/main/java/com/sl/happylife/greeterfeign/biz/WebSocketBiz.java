@@ -1,4 +1,4 @@
-package com.sl.happylife.greetercloud.biz;
+package com.sl.happylife.greeterfeign.biz;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;

@@ -1,4 +1,4 @@
-package com.sl.happylife.greetercloud.configures;
+package com.sl.happylife.greeterfeign.configures;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.converter.MessageConverter;

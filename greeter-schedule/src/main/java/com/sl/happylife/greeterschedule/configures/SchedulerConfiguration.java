@@ -21,6 +21,9 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * @author suxin
+ */
 @Configuration
 @PropertySource("classpath:quartz.properties")
 @Profile({"prod"})
@@ -67,7 +70,8 @@ public class SchedulerConfiguration {
     }
 
     @Bean
-    public SchedulerFactoryBean schedulerFactoryBean(@Qualifier("quartzDataSource") DataSource quartzDataSource, JobFactory jobFactory)
+    public SchedulerFactoryBean schedulerFactoryBean(
+            @Qualifier("quartzDataSource") DataSource quartzDataSource, JobFactory jobFactory)
             throws IOException {
 
         logger.info("start schedule by SchedulerFactoryBean");

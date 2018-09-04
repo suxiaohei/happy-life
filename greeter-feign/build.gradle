@@ -1,6 +1,21 @@
 dependencies {
+    compile "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:${springCloudVersion}"
+
     compile "org.springframework.cloud:spring-cloud-starter-config:${springCloudVersion}"
+    compile "org.springframework.cloud:spring-cloud-config-client:${springCloudVersion}"
+
+    compile "org.springframework.boot:spring-boot-starter-websocket:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+
+    compile "org.springframework.security:spring-security-config:${springVersion}"
+    compile "org.springframework.security:spring-security-web:${springVersion}"
+
+    compile 'org.thymeleaf.extras:thymeleaf-extras-springsecurity4'
 
     // 本地项目依赖
     compile project(':greeter-cloud-app-api')
+    compile project(':greeter-schedule')
+
+    testCompile "org.springframework.security:spring-security-test:${springVersion}"
 }
