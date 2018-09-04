@@ -1,6 +1,8 @@
 mainClassName = 'com.sl.happylife.greetercloud.GreeterCloudApplication'
 
 dependencies {
+    compile "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:${springCloudVersion}"
+
     compile "org.springframework.cloud:spring-cloud-config-client:${springCloudVersion}"
 
     compile "org.springframework.boot:spring-boot-starter-websocket:${springBootVersion}"
