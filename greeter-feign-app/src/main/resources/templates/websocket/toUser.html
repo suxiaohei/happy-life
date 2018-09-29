@@ -12,10 +12,10 @@
 
     var websocket = null;
     if ('WebSocket' in window) {
-        websocket = new WebSocket("ws://localhost:8871/socketHandler?identifies=" + floor);
+        websocket = new WebSocket("ws://localhost:8766/socketHandler?identifies=" + floor);
     }
     else if ('MozWebSocket' in window) {
-        websocket = new MozWebSocket("ws://localhost:8871/socketHandler?identifies=" + floor);
+        websocket = new MozWebSocket("ws://localhost:8766/socketHandler?identifies=" + floor);
     }
 
     websocket.onopen = onOpen;
