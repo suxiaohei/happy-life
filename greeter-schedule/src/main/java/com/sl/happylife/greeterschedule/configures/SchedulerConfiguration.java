@@ -31,29 +31,29 @@ import java.util.Properties;
 @Profile({"prod"})
 public class SchedulerConfiguration {
 
-    @Value("${bzn_quartz.org.quartz.scheduler.instanceName}")
+    @Value("${sl_quartz.org.quartz.scheduler.instanceName}")
     private String instanceName;
-    @Value("${bzn_quartz.org.quartz.scheduler.instanceId}")
+    @Value("${sl_quartz.org.quartz.scheduler.instanceId}")
     private String instanceId;
-    @Value("${bzn_quartz.org.quartz.scheduler.skipUpdateCheck}")
+    @Value("${sl_quartz.org.quartz.scheduler.skipUpdateCheck}")
     private String skipUpdateCheck;
-    @Value("${bzn_quartz.org.quartz.scheduler.jobFactory.class}")
+    @Value("${sl_quartz.org.quartz.scheduler.jobFactory.class}")
 
     private String jobFactoryClass;
-    @Value("${bzn_quartz.org.quartz.jobStore.class}")
+    @Value("${sl_quartz.org.quartz.jobStore.class}")
     private String jobStoreClass;
-    @Value("${bzn_quartz.org.quartz.jobStore.driverDelegateClass}")
+    @Value("${sl_quartz.org.quartz.jobStore.driverDelegateClass}")
     private String jobStoreDriverDelegateClass;
-    @Value("${bzn_quartz.org.quartz.jobStore.tablePrefix}")
+    @Value("${sl_quartz.org.quartz.jobStore.tablePrefix}")
     private String jobStoreTablePrefix;
-    @Value("${bzn_quartz.org.quartz.jobStore.isClustered}")
+    @Value("${sl_quartz.org.quartz.jobStore.isClustered}")
     private String jobStoreIsClustered;
-    @Value("${bzn_quartz.org.quartz.jobStore.clusterCheckinInterval}")
+    @Value("${sl_quartz.org.quartz.jobStore.clusterCheckinInterval}")
     private String clusterCheckinInterval;
 
-    @Value("${bzn_quartz.org.quartz.threadPool.threadCount}")
+    @Value("${sl_quartz.org.quartz.threadPool.threadCount}")
     private String threadCount;
-    @Value("${bzn_quartz.org.quartz.threadPool.class}")
+    @Value("${sl_quartz.org.quartz.threadPool.class}")
     private String threadPoolClass;
 
     private static Logger logger = LoggerFactory.getLogger(SchedulerConfiguration.class);
@@ -66,7 +66,7 @@ public class SchedulerConfiguration {
     }
 
     @Bean("quartzDataSource")
-    @ConfigurationProperties("dataSource.bzn_quartz")
+    @ConfigurationProperties("dataSource.sl_quartz")
     public HikariDataSource quartzDataSource() {
         return (HikariDataSource) DataSourceBuilder.create().type(HikariDataSource.class).build();
     }
@@ -95,7 +95,7 @@ public class SchedulerConfiguration {
         properties.put("org.quartz.jobStore.driverDelegateClass", jobStoreDriverDelegateClass);
         properties.put("quartz.jobStore.tablePrefix", jobStoreTablePrefix);
         properties.put("org.quartz.jobStore.isClustered", jobStoreIsClustered);
-        properties.put("bzn_quartz.org.quartz.jobStore.clusterCheckinInterval", clusterCheckinInterval);
+        properties.put("sl_quartz.org.quartz.jobStore.clusterCheckinInterval", clusterCheckinInterval);
 
         properties.put("org.quartz.threadPool.threadCount", threadCount);
         properties.put("org.quartz.threadPool.class", threadPoolClass);
