@@ -49,5 +49,4 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-jdbc', version: '4.3.13.RELEASE'
     // https://mvnrepository.com/artifact/org.springframework/spring-context-support
     compile group: 'org.springframework', name: 'spring-context-support', version: '4.3.13.RELEASE'
-
 }

@@ -84,7 +84,6 @@ allprojects {
 
 subprojects {
     apply plugin: "java"
-    apply plugin: "application"
 
     apply plugin: "io.spring.dependency-management"
     apply plugin: 'org.springframework.boot'
